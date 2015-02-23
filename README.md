@@ -8,6 +8,17 @@ Usage
 
 This project is not production ready; use at your own risk.
 
+
+Get S3cala
+----------
+In your sbt configuration file (`build.sbt` or `Build.scala`),
+
+```scala
+resolvers += "Kevin's Public Repository" at "http://nexus.lckymn.com/content/repositories/kevin-public-releases"
+
+libraryDeps += "com.roundeights" %% "s3cala" % "0.1"
+```
+
 Example Usage
 -------------
 
