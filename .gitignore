@@ -14,3 +14,15 @@ project/plugins/project/
 
 TestApp.scala
 
+lib_managed
+project/boot
+classes
+.idea/ant.xml
+.DS_Store
+*~
+.idea
+.idea_modules
+.lib
+.ivy
+.boot
+
