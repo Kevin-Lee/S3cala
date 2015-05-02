@@ -20,31 +20,39 @@ libraryDependencies ++= Seq(
     "com.amazonaws" % "aws-java-sdk" % "1.7.8.1"
 )
 
-val nexus = "http://nexus.lckymn.com/"
 
-publishTo <<= version { (v: String) =>
-  if (v.trim.endsWith("SNAPSHOT"))
-    Some("snapshots" at nexus + "content/repositories/kevin-public-snapshots")
-  else
-    Some("releases"  at nexus + "content/repositories/kevin-public-releases")
-}
+//val nexus = "http://nexus.lckymn.com/"
+
+//publishTo <<= version { (v: String) =>
+//  if (v.trim.endsWith("SNAPSHOT"))
+//  Some("snapshots" at nexus + "content/repositories/kevin-public-snapshots")
+//  else
+//  Some("releases"  at nexus + "content/repositories/kevin-public-releases")
+//}
 
 publishMavenStyle := true
 
-credentials += Credentials(Path.userHome / ".ivy2" / ".nexus-deploy-credentials")
+//credentials += Credentials(Path.userHome / ".ivy2" / ".nexus-deploy-credentials")
 
 pomIncludeRepository := { _ => false }
 
 pomExtra := (
-  <url>https://github.com/Kevin-Lee/S3cala</url>
-    <licenses>
-      <license>
-        <name>The MIT License</name>
-        <url>https://github.com/Kevin-Lee/S3cala/blob/master/LICENSE.md</url>
-      </license>
-    </licenses>
-    <scm>
-      <url>git@github.com:Kevin-Lee/S3cala.git</url>
-      <connection>scm:git:git@github.com:Kevin-Lee/S3cala.git</connection>
-    </scm>)
+<url>https://github.com/Kevin-Lee/S3cala</url>
+<licenses>
+  <license>
+    <name>The MIT License</name>
+    <url>https://github.com/Kevin-Lee/S3cala/blob/master/LICENSE.md</url>
+  </license>
+</licenses>
+<scm>
+  <url>git@github.com:Kevin-Lee/S3cala.git</url>
+  <connection>scm:git:git@github.com:Kevin-Lee/S3cala.git</connection>
+</scm>)
 
+import bintray.Keys._
+
+licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
+
+Seq(bintrayPublishSettings:_*)
+
+repository in bintray := "maven"
