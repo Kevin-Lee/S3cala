@@ -1,4 +1,4 @@
-S3cala [![Build Status](https://secure.travis-ci.org/Nycto/S3cala.png?branch=master)](http://travis-ci.org/Nycto/S3cala)
+S3cala [![Build Status](https://travis-ci.org/Kevin-Lee/S3cala.svg)](https://travis-ci.org/Kevin-Lee/S3cala)
 ======
 
 A non-block S3 client for Scala
@@ -14,7 +14,7 @@ Get S3cala
 In your sbt configuration file (`build.sbt` or `Build.scala`),
 
 ```scala
-resolvers += "Kevin's Public Repository" at "http://nexus.lckymn.com/content/repositories/kevin-public-releases"
+resolvers += "Bintray Public Repository" at "http://dl.bintray.com/kevinlee/maven"
 
 libraryDeps += "com.roundeights" %% "s3cala" % "0.1"
 ```
